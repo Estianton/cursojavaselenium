@@ -1,5 +1,7 @@
 package EjemploSelenium;
 
+import java.util.concurrent.TimeUnit;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -32,6 +34,8 @@ System.setProperty("webdriver.chrome.driver", "C:\\Users\\adminlocal\\eclipse-wo
 		
 		String winhandlebefore = driver1.getWindowHandle();
 		driver1.switchTo().window(winhandlebefore);
+		
+		driver1.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		
 		
 		WebElement element2 = driver1.findElement(By.linkText("Eu"));
